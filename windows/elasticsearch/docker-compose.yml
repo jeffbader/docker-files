@@ -1,0 +1,18 @@
+version: "3.4"
+
+services: 
+  elasticsearch:
+    build:
+      context: .
+    image: elasticsearch
+    ports:
+      - 9200:9200
+      - 9300:9300 
+    volumes:
+      - "c:\\avs\\elasticsearch\\data:c:/es-data"
+      - "c:\\avs\\elasticsearch\\logs:c:/es-logs"
+    networks: 
+      - es-net
+
+networks:
+  es-net:
